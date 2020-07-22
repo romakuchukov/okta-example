@@ -16,21 +16,30 @@ const config = {
   },
 
   module:{
-    rules:[{
-      //test:/\.(s*)css$/,
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
-        query: { presets: ['@babel/preset-env'] }
+    rules:[
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: { limit: 10000 }
+      }, {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      }, {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          query: { presets: ['@babel/preset-env'] }
+        },
+        exclude: /node_modules/
       }
-    }]
+    ]
   },
   devServer: {
     //contentBase: './public',
     hot: true,
     compress: true,
-    port: 8080,
+    port: 8000,
+    https: true,
     allowedHosts: ['localhost'],
     watchOptions: {
       // Delay the rebuild after the first change

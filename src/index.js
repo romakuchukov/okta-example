@@ -8,10 +8,9 @@ import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 
 
 
-var signIn = new OktaSignIn({baseUrl: 'https://${yourOktaDomain}'});
-signIn.renderEl({
-  el: '#widget-container'
-}, function success(res) {
+const signIn = new OktaSignIn({baseUrl: 'https://${yourOktaDomain}'});
+
+signIn.renderEl({ el: '#widget-container' }, (res) => {
   if (res.status === 'SUCCESS') {
     console.log('Do something with this sessionToken', res.session.token);
   } else {
