@@ -5,12 +5,20 @@ const config = {
   entry: {
     app: './src/index.js'
   },
+  performance: {
+    hints: false
+  },
+  devtool: 'inline-source-map',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'public'),
     publicPath: '/public/',
   },
-  devtool: 'source-map',
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all',
+  //   },
+  // },
   resolve: {
     extensions: ['.js']
   },
