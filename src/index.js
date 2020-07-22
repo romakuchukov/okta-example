@@ -1,14 +1,16 @@
 module.hot && module.hot.accept();
 
 import OktaSignIn from '@okta/okta-signin-widget';
-import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
+import oktaConfig from './js/oktaconfig';
+import '@okta/okta-signin-widget/dist/sass/okta-sign-in.scss';
+import './scss/overrides.scss';
 
 //import App from './cmp/App';
 
 
 
 
-const signIn = new OktaSignIn({baseUrl: 'https://${yourOktaDomain}'});
+const signIn = new OktaSignIn(oktaConfig);
 
 signIn.renderEl({ el: '#widget-container' }, (res) => {
   if (res.status === 'SUCCESS') {

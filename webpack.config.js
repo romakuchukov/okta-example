@@ -10,7 +10,7 @@ const config = {
     path: path.resolve(__dirname, 'public'),
     publicPath: '/public/',
   },
-  //devtool: 'source-map',
+  devtool: 'source-map',
   resolve: {
     extensions: ['.js']
   },
@@ -22,8 +22,8 @@ const config = {
         loader: 'url-loader',
         options: { limit: 10000 }
       }, {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
+        test: /\.(s*)css$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }, {
         test: /\.js$/,
         use: {
