@@ -8,7 +8,7 @@ const config = {
   i18n: {
     //Overrides default text when using English. Override other languages by adding additional sections.
     'en': {
-      'primaryauth.title': 'Sign In',   // Changes the sign in text
+      'primaryauth.title': 'Login to your account',   // Changes the sign in text
       'primaryauth.submit': 'Sign In',  // Changes the sign in button
       // More e.g. [primaryauth.username.placeholder,  primaryauth.password.placeholder, needhelp, etc.].
       // Full list here: https://github.com/okta/okta-signin-widget/blob/master/packages/@okta/i18n/dist/properties/login.properties
