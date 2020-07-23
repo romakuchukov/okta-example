@@ -6,8 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="OKTA">
     <meta http-equiv="cache-control" content="no-cache">
-
     <title>OKTA | Login</title>
+    <style>
+        /* loader animation */
+        .loader {
+            display: none;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto;
+            margin-top: 90px;
+        }
+        .loader:after {
+            content: " ";
+            display: block;
+            width: 76px;
+            height: 76px;
+            margin: 1px;
+            border-radius: 50%;
+            border: 15px solid #3f51b5;
+            border-color: #3f51b5 transparent #3f51b5 transparent;
+            animation: loader-anim 1.2s linear infinite;
+        }
+        .loader:only-child { display: block; }
+
+        @keyframes loader-anim {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
     <noscript>You need to enable JavaScript.</noscript>
