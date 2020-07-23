@@ -11,43 +11,22 @@ const sidePanel = document.createElement('div');
 sidePanel.id = 'side-panel';
 document.getElementById('widget-container').appendChild(sidePanel);
 
-function waitForElement(id, callback){
-  var poops = setInterval(function(){
-      if(document.getElementById(id)){
-          clearInterval(poops);
-          callback();
-      }
-  }, 100);
-}
 
 waitForElement('okta-signin-password', function() {
-  const preventAutofill = document.createElement('input');
-  const passwordFake = document.createElement('input');
-  preventAutofill.type = 'text';
-  passwordFake.type = 'password';
-  preventAutofill.value = '';
-  passwordFake.value = '';
-  preventAutofill.style = 'display:none;';
-  passwordFake.style = 'display:none;';
-  // preventAutofill.id = 'side-panel';
+  // https://stackoverflow.com/questions/15738259/disabling-chrome-autofill
+  // https://stackoverflow.com/questions/12374442/chrome-ignores-autocomplete-off
+  // autocomplete bug fix
+  const autofillFix = document.createElement('input');
+  const form = document.querySelector('form');
 
-  document.querySelector('.primary-auth-form').prepend(preventAutofill);
-  document.querySelector('.primary-auth-form').prepend(passwordFake);
-
-  // <input type="text" name="prevent_autofill" id="prevent_autofill" value="" style="display:none;">
-  // <input type="password" name="password_fake" id="password_fake" value="" style="display:none;">
-
+  autofillFix.style = 'display:none;';
+  form.prepend(autofillFix);
 
   const username = document.getElementById('okta-signin-username');
   const password = document.getElementById('okta-signin-password');
-  // https://stackoverflow.com/questions/15738259/disabling-chrome-autofill
-  // https://stackoverflow.com/questions/12374442/chrome-ignores-autocomplete-off
-  username.value = '';
-  password.value = '';
+
   username.setAttribute('autocomplete', 'chrome-off');
   password.setAttribute('autocomplete', 'new-password');
-  document.querySelector('.primary-auth-form').setAttribute('autocomplete', 'false');
-  document.querySelector('.primary-auth-form').reset();
 });
 
 
