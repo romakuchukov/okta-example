@@ -10,6 +10,27 @@ const sidePanel = document.createElement('div');
 sidePanel.id = 'side-panel';
 document.getElementById('widget-container').appendChild(sidePanel);
 
+// function waitForElement(id, callback){
+//   var poops = setInterval(function(){
+//       if(document.getElementById(id)){
+//           clearInterval(poops);
+//           callback();
+//       }
+//   }, 100);
+// }
+
+// waitForElement('okta-signin-password', function() {
+//   const username = document.getElementById('okta-signin-username');
+//   const password = document.getElementById('okta-signin-password');
+//   username.value = '';
+//   password.value = '';
+//   username.setAttribute('autocomplete', 'chrome-off')
+//   password.setAttribute('autocomplete', 'new-password')
+//   //document.getElementById('account-recovery-username').value = '';
+//   console.log(document.querySelector('.primary-auth-form'));
+//   document.querySelector('.primary-auth-form').setAttribute('autocomplete', 'chrome-off');
+//   console.log("element is loaded.. do stuff");
+// });
 
 const signIn = new OktaSignIn(oktaConfig);
 
