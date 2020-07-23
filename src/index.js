@@ -6,6 +6,11 @@ import '@okta/okta-signin-widget/dist/sass/okta-sign-in.scss';
 import './scss/style.scss';
 
 
+const sidePanel = document.createElement('div');
+sidePanel.id = 'side-panel';
+document.getElementById('widget-container').appendChild(sidePanel);
+
+
 const signIn = new OktaSignIn(oktaConfig);
 
 const success = (res) => {
