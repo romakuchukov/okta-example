@@ -1,14 +1,8 @@
-// const config = {
-//   baseUrl: 'https://${yourOktaDomain}',
-//   logo: 'logo.png'
-// };
-
-
 
 const config = {
   // Enable or disable widget functionality with the following options. Some of these features require additional configuration in your Okta admin settings. Detailed information can be found here: https://github.com/okta/okta-signin-widget#okta-sign-in-widget
   // Look and feel changes:
-  baseUrl: 'https://${yourOktaDomain}',
+  baseUrl: 'https://localhost:8000',
   logo: 'logo.png', // Try changing "okta.com" to other domains, like: "workday.com", "splunk.com", or "delmonte.com"
   language: 'en',                       // Try: [fr, de, es, ja, zh-CN] Full list: https://github.com/okta/okta-signin-widget#language-and-text
   i18n: {
@@ -22,8 +16,8 @@ const config = {
   },
   // Changes to widget functionality
   features: {
-    registration: true,                 // Enable self-service registration flow
-    rememberMe: true,                   // Setting to false will remove the checkbox to save username
+    registration: false,                 // Enable self-service registration flow
+    rememberMe: false,                   // Setting to false will remove the checkbox to save username
     //multiOptionalFactorEnroll: true,  // Allow users to enroll in multiple optional factors before finishing the authentication flow.
     //selfServiceUnlock: true,          // Will enable unlock in addition to forgotten password
     //smsRecovery: true,                // Enable SMS-based account recovery
@@ -33,7 +27,7 @@ const config = {
   clientId: '',
   redirectUri: '',
   authParams: {
-    issuer: '',
+    issuer: 'https://localhost:8000/oauth2/default',
     responseType: ['id_token', 'token'],
     scopes: ['openid', 'email', 'profile'],
   },
