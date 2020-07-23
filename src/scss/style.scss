@@ -23,7 +23,7 @@ body { background: #1e1f27; }
     &:only-child { width: auto; }
   }
   #side-panel {
-    background: url('../../bg.jpg') no-repeat 50% 0%;
+    background: url('../img/bg.jpg') no-repeat 50% 0%;
     background-size: cover;
     @media #{$sm-down} { display: none; }
     @media #{$sm-up} { width: 30%; }
@@ -44,12 +44,52 @@ body { background: #1e1f27; }
     .o-form  {
       h2,
       label { color: #ffffff; }
+      h2 {
+        font-family: 'Helvetica Neue';
+        font-weight: 300;
+        font-size: 25px;
+      }
+      @mixin autofill {
+        padding: 0px 16px !important;
+        font-size: 30px !important;
+        color: #882424 !important;
+      }
+      // keep :autofill separate or they won't work
       .input-fix input[type=text],
       .input-fix input[type=password] {
-        padding: 0px 16px;
-        font-size: 30px;
-        color: #882424;
+        @include autofill;
       }
+      .input-fix input:autofill {
+        @include autofill;
+      }
+      .input-fix input:-moz-autofill {
+        @include autofill;
+      }
+      .input-fix input:-webkit-autofill {
+        @include autofill;
+      }
+
+      // .input-fix input:-webkit-autofill {
+      //   -webkit-box-shadow:0 0 0 50px #1c1e29 inset;
+      //   -webkit-text-fill-color: #882424;
+      //   font-size: 30px;
+      // }
+      // .input-fix input:-webkit-autofill:focus {
+      //   -webkit-box-shadow: 0 0 0 50px #1c1e29 inset;
+      //   -webkit-text-fill-color: #882424;
+      //   font-size: 30px;
+      // }
+
+      // input:focus::-webkit-input-placeholder{
+      //   color: transparent!important;
+      // }
+      // input:focus::-moz-placeholder{
+      //     color: transparent!important;
+      // }
+      // input:focus:-moz-placeholder{
+      //     color: transparent!important;
+      // }
+
     }
     .link { color: #ffffff; }
     .okta-sign-in-header { border-bottom-color: #ff0000; }
