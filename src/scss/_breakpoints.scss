@@ -1,0 +1,18 @@
+// Width variables for media queries
+$sm: 600px;     //small
+$lg: 700px;     //small
+
+// Min width goes form "width" which is defined that way ------->
+// If you are resizing the right corner
+$sm-up: "(min-width: #{$sm + 1})";
+$lg-up: "(min-width: #{$lg + 1})";
+
+// Max width goes form "width" which is defined this way <-------
+// If you are resizing the right corner
+$sm-down: "(max-width: #{$sm})";
+$lg-down: "(max-width: #{$lg})";
+// use
+// in your main.scss
+// `import "breakpoints";`
+// then in your main.scss
+//`@media #{$xs-up} { ... }`
