@@ -14,7 +14,7 @@ const config = {
     // filename: 'main.js',
     // path: path.resolve(__dirname, 'public'),
     publicPath: '/public/',
-    filename: '[name].bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'public'),
   },
   // optimization: {
