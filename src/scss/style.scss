@@ -17,6 +17,7 @@ body { background: #1e1f27; }
   max-width: 960px;
   margin: 0 auto;
   background: #292c3d;
+  @media #{$ht-dn} { height: auto; }
   & > div {
     // width: 100%;
     @media #{$lg-up} { width: 50%; }
@@ -25,7 +26,7 @@ body { background: #1e1f27; }
   #side-panel {
     background: url('../img/bg.jpg') no-repeat 50% 0%;
     background-size: cover;
-    @media #{$sm-down} { display: none; }
+    @media #{$sm-dn} { display: none; }
     @media #{$sm-up} { width: 30%; }
     @media #{$lg-up} { width: 50%; }
 
@@ -52,11 +53,13 @@ body { background: #1e1f27; }
       @mixin autofill {
         padding: 0px 16px !important;
         font-size: 30px !important;
-        color: #882424 !important;
+        //color: #882424 !important;
       }
       // keep :autofill separate or they won't work
       .input-fix input[type=text],
-      .input-fix input[type=password] {
+      .input-fix input[type=password],
+      .input-fix input[type=text]:focus,
+      .input-fix input[type=password]:focus {
         @include autofill;
       }
       .input-fix input:autofill {
@@ -65,7 +68,10 @@ body { background: #1e1f27; }
       .input-fix input:-moz-autofill {
         @include autofill;
       }
-      .input-fix input:-webkit-autofill {
+      .input-fix input:-webkit-autofill,
+      .input-fix input:-webkit-autofill:hover,
+      .input-fix input:-webkit-autofill:focus,
+      .input-fix input:-webkit-autofill:active {
         @include autofill;
       }
 
