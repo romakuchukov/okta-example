@@ -18,7 +18,6 @@ body { background: #1e1f27; }
   background: #292c3d;
   @media #{$ht-dn} { height: auto; }
   & > div {
-    // width: 100%;
     @media #{$lg-up} { width: 50%; }
     &:only-child { width: auto; }
   }
@@ -52,7 +51,6 @@ body { background: #1e1f27; }
       @mixin autofill {
         padding: 0px 16px !important;
         font-size: 30px !important;
-        //color: #882424 !important;
       }
       // keep :autofill separate or they won't work
       .input-fix input[type=text],
@@ -73,27 +71,6 @@ body { background: #1e1f27; }
       .input-fix input:-webkit-autofill:active {
         @include autofill;
       }
-
-      // .input-fix input:-webkit-autofill {
-      //   -webkit-box-shadow:0 0 0 50px #1c1e29 inset;
-      //   -webkit-text-fill-color: #882424;
-      //   font-size: 30px;
-      // }
-      // .input-fix input:-webkit-autofill:focus {
-      //   -webkit-box-shadow: 0 0 0 50px #1c1e29 inset;
-      //   -webkit-text-fill-color: #882424;
-      //   font-size: 30px;
-      // }
-
-      // input:focus::-webkit-input-placeholder{
-      //   color: transparent!important;
-      // }
-      // input:focus::-moz-placeholder{
-      //     color: transparent!important;
-      // }
-      // input:focus:-moz-placeholder{
-      //     color: transparent!important;
-      // }
 
     }
     .link { color: #ffffff; }
