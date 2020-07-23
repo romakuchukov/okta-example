@@ -11,7 +11,8 @@ const sidePanel = document.createElement('div');
 sidePanel.id = 'side-panel';
 document.getElementById('widget-container').appendChild(sidePanel);
 
-
+// prevents chrome from using autofill.
+// because it breaks input text style
 waitForElement('okta-signin-password', function() {
   // https://stackoverflow.com/questions/15738259/disabling-chrome-autofill
   // https://stackoverflow.com/questions/12374442/chrome-ignores-autocomplete-off
