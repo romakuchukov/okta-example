@@ -3,22 +3,38 @@ const webpack = require('webpack');
 
 const config = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.js',
+    //vendor: '@okta/okta-signin-widget',
   },
-  performance: {
-    hints: false
-  },
-  devtool: 'inline-source-map',
+  // performance: {
+  //   hints: false
+  // },
+  //devtool: false,
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'public'),
+    // filename: 'main.js',
+    // path: path.resolve(__dirname, 'public'),
     publicPath: '/public/',
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'public'),
   },
   // optimization: {
   //   splitChunks: {
   //     chunks: 'all',
   //   },
   // },
+  // https://codeburst.io/basics-of-bundle-splitting-with-webpack-4-99a670ebfe48
+  // https://survivejs.com/webpack/building/bundle-splitting/
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'initial',
+        }
+      }
+    }
+  },
   resolve: {
     extensions: ['.js']
   },
@@ -65,4 +81,12 @@ const config = {
   ],
 };
 
-module.exports = config;
+module.exports = (env, argv) => {
+
+  const isDev = argv.mode !== 'production';
+  const devtool = { devtool: isDev ? 'inline-source-map' : false};
+
+  return { ...config, ...devtool };
+}
+
+//module.exports = config;
