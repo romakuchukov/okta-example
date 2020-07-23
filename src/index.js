@@ -2,6 +2,7 @@ module.hot && module.hot.accept();
 
 import OktaSignIn from '@okta/okta-signin-widget';
 import oktaConfig from './js/oktaconfig';
+import waitForElement from './js/waitforelement';
 import '@okta/okta-signin-widget/dist/sass/okta-sign-in.scss';
 import './scss/style.scss';
 
