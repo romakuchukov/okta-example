@@ -1,6 +1,8 @@
 
 const config = {
-  // Enable or disable widget functionality with the following options. Some of these features require additional configuration in your Okta admin settings. Detailed information can be found here: https://github.com/okta/okta-signin-widget#okta-sign-in-widget
+  // Enable or disable widget functionality with the following options.
+  // Some of these features require additional configuration in your Okta admin settings.
+  // Detailed information can be found here: https://github.com/okta/okta-signin-widget#okta-sign-in-widget
   // Look and feel changes:
   baseUrl: 'http://localhost:8000',
   logo: 'logo.png', // Try changing "okta.com" to other domains, like: "workday.com", "splunk.com", or "delmonte.com"
