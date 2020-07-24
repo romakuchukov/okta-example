@@ -2,7 +2,7 @@
 const config = {
   // Enable or disable widget functionality with the following options. Some of these features require additional configuration in your Okta admin settings. Detailed information can be found here: https://github.com/okta/okta-signin-widget#okta-sign-in-widget
   // Look and feel changes:
-  baseUrl: 'https://localhost:8000',
+  baseUrl: 'http://localhost:8000',
   logo: 'logo.png', // Try changing "okta.com" to other domains, like: "workday.com", "splunk.com", or "delmonte.com"
   language: 'en',                       // Try: [fr, de, es, ja, zh-CN] Full list: https://github.com/okta/okta-signin-widget#language-and-text
   i18n: {
@@ -27,7 +27,7 @@ const config = {
   clientId: '',
   redirectUri: '',
   authParams: {
-    issuer: 'https://localhost:8000/oauth2/default',
+    issuer: 'http://localhost:8000/oauth2/default',
     responseType: ['id_token', 'token'],
     scopes: ['openid', 'email', 'profile'],
   },
